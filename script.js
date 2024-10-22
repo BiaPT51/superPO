@@ -89,7 +89,7 @@ function openImage(clickedImage) {
 
 // Hover to change image
 var originalImageSrcs = {};  // Object to store the original paths of images
-const baseUrl = "https://bucketbabe.s3.eu-north-1.amazonaws.com/"; // Base URL for S3 bucket
+const baseUrl = "https://d1gx0r8q6ylncm.cloudfront.net/"; // Base URL for S3 bucket
 
 function setupImageHover(elementId, newImageRelativePath) {
     const imageElement = document.getElementById(elementId);
@@ -130,7 +130,7 @@ setupImageHover('hoverImage8', 'ourosm1_1.png');
 
 function generateGallery(galleryId, count, folderName) {
     const gallery = document.getElementById(galleryId);
-    const baseUrl = "https://bucketbabe.s3.eu-north-1.amazonaws.com/"; // Base URL for the S3 bucket
+    const baseUrl = "https://d1gx0r8q6ylncm.cloudfront.net/"; // Base URL for the S3 bucket
     
     if (!gallery) {
         console.error(`Gallery container with ID '${galleryId}' not found`);
