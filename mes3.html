@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Marvão 22'</title>
+</head>
+<body>
+    <header>
+        <h1>Marvão '22 // set</h1>
+        
+        <div class="buttons">
+            <a href="secondpage.html">Início</a>
+            <a href="main.html">Clica em mim</a>
+        </div>
+    </header>
+
+    <div class="entry">
+        <p>Marvão irá ter sempre um lugar especial nas minhas memórias. Foi uma escapadinha perfeita, desde a nossa chegada ao campismo, onde fomos recebidas pelo Sr. simpático e atencioso,
+            até à chuva que começou a cair. Foi uma das vezes em que mais gostei de acampar debaixo da chuva, adormecer e acordar ao som das gotas na tenda. Foi tranquilidade, foi calma, foi descanso.
+            <br/>Foi ver o jogo do Benfas e perceber o quanto adorava admirar a minha miúda enquanto ela assistia a algo que ela gostava. E, sendo sincera, acho que só vi uns 5 mins do jogo. Não dava para
+             tirar os olhos de ti e sorrir:) <br/>Foi o comer ganda sopinha, umas bifanas e umas minis baratinhas num tasco onde o Sr. era incrivelmente acolhedor. Foi começar um almoço fora do carro e correr para dentro 
+             dele quando a chuva começou a cair e acabar a comer sandes. 
+            <br/>E aquele banhinho que tomámos as duas? Deixo-te a pensar nisso;)
+            <br/>Acho que foi aquela onde tirei menos fotos mas ao olhar para estas dá para relembrar o quão incrivel foi!! 
+        </p>
+    </div>
+
+    <div class="gallery" id="photoGallery"></div>
+
+    <script src="script.js"></script> <!-- Load the external script here -->
+
+    <script>
+        // Call the function after the DOM is loaded
+        window.onload = function() {
+            generateGallery('photoGallery', 12, 'marvao22'); 
+        };
+    </script>
+</body>
+</html>

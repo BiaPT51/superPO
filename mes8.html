@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Dias bonitos // 2021 - ...</title>
+</head>
+<body>
+    <header>
+        <h1>Dias bonitos // 2021 - ...</h1>
+        
+        <div class="buttons">
+            <a href="secondpage.html">Início</a>
+            <a href="main.html">Clica em mim</a>
+        </div>
+    </header>
+
+    <div class="entry">
+        <p>E aqui ficam mais alguns momentos nossos. amo te por amor:)
+
+        </p>
+    </div>
+
+    <div class="gallery" id="photoGallery"></div>
+
+    <script src="script.js"></script> <!-- Load the external script here -->
+
+    <script>
+        // Call the function after the DOM is loaded
+        window.onload = function() {
+            generateGallery('photoGallery', 97, 'outros'); 
+        };
+    </script>
+    
+</body>
+</html>

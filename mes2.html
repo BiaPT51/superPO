@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Lousã 22'</title>
+</head>
+<body>
+    <header>
+        <h1>Lousã '22 // jun</h1>
+        
+        <div class="buttons">
+            <a href="secondpage.html">Início</a>
+            <a href="main.html">Clica em mim</a>
+        </div>
+    </header>
+
+    <div class="entry">
+        <p>Sobre a Lousã, há muito pouco a dizer, mas mesmo assim foi uma grande escapadinha. Lembro-me que o sol estava a começar a pôr-se perto do baloiço e que, 
+            na descida da serra até ao campismo, ele se pôs completamente. Recordo-me também da tua felicidade ao descobrir que o parque de campismo ficava ao pé do rio 
+            e podíamos ouvi-lo. Esse sorriso, miúda, wow:)
+            <br/>E a cascata!! Foi uma grande descida (e subida, ehehe), mas wow. Grande mergulho que demos. E depois, quando preparámos o almoço no meio da estrada, lembro-me 
+            de pensar para mim que era incrível sermos as duas assim, sabes? Que podíamos almoçar em qualquer lado de qualquer maneira e que estava tudo bem. Queria muito que o 
+            futuro nos proporcionasse mais destes.
+            <br/>Mesmo tendo sido pouco tempo, ajudou-me a conhecer-te um pouco mais, a apaixonar-me um pouco mais, e isso é muito bom. É um lugar que quero muito voltar contigo. 
+        </p>
+    </div>
+
+    <div class="gallery" id="photoGallery"></div>
+
+    <script src="script.js"></script> <!-- Load the external script here -->
+
+    <script>
+        // Call the function after the DOM is loaded
+        window.onload = function() {
+            generateGallery('photoGallery', 13, 'lousa22'); 
+        };
+    </script>
+<!--
+    <div class="gallery" id="photoGallery">
+        <img src="./photos/lousa22/1.jpg" alt="photos" >
+        <img src="./photos/lousa22/2.jpg" alt="photos">
+        <img src="./photos/lousa22/6.jpg" alt="photos">
+        <img src="./photos/lousa22/4.jpg" alt="photos">
+        <img src="./photos/lousa22/5.jpg" alt="photos">
+        <img src="./photos/lousa22/3.jpg" alt="photos">
+        
+    </div>
+    <script src="script.js"></script>
+    -->
+</body>
+</html>
