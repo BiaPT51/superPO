@@ -172,12 +172,12 @@ function generateGallery(galleryId, count, folderName) {
         gallery.appendChild(img);
     }
 }
-
+//----------------------------------------------------------------------------------------------------------------------------------
 //map.html
 // Inicializa o mapa e define a visão para as coordenadas de Portugal
-const map = L.map('map').setView([39.3999, -8.2245], 6.5); // Latitude e Longitude de Portugal, nível de zoom 7
+const map = L.map('map').setView([39.3999, -8.2245], 6.5); // Latitude e Longitude de Portugal, nível de zoom 6.5
 
-// Adiciona as camadas do mapa (certifique-se de usar HTTPS)
+// Adiciona as camadas do mapa  
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
     maxZoom: 18 // Nível máximo de zoom permitido
@@ -187,11 +187,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const trips = [
     {
         name: "Costa Vicentina '22",
-        description: "A primeira viagem que fizemos, Costa Vicentina '22",
+        description: "A nossa primeira viagem!!",
         color: 'blue', // Cor da polyline para esta viagem
         url: "mes1.html", // URL associada a esta viagem
         cities: [
-            { name: "Cabo de São Vicente", coords: [37.0206, -8.9876], memory: "As falésias deslumbrantes de Cabo de São Vicente 🏞️" },
+            { name: "Sines", coords: [37.0206, -8.9876], memory: "As falésias deslumbrantes de Cabo de São Vicente 🏞️" },
             { name: "Carrapateira", coords: [37.1391, -8.8724], memory: "As praias e o surf em Carrapateira 🌊🏄‍♂️" },
             { name: "Zambujeira do Mar", coords: [37.5378, -8.8014], memory: "O pôr do sol em Zambujeira do Mar, momentos inesquecíveis 🌅" },
             { name: "Aljezur", coords: [37.3135, -8.8063], memory: "A cidade encantadora de Aljezur, cheia de história 🏰" },
