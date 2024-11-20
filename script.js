@@ -186,23 +186,50 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Lista de viagens e seus dados (coordenadas, memória, e URL)
 const trips = [
     {
-        name: "Costa Vicentina '22",
-        description: "A nossa primeira viagem!!",
+        name: "Costa Vicentina '23",
+        description: "PDA!!",
         color: 'blue', // Cor da polyline para esta viagem
         url: "mes1.html", // URL associada a esta viagem
         cities: [
-            { name: "Sines", coords: [37.0206, -8.9876], memory: "As falésias deslumbrantes de Cabo de São Vicente 🏞️" },
-            { name: "Carrapateira", coords: [37.1391, -8.8724], memory: "As praias e o surf em Carrapateira 🌊🏄‍♂️" },
-            { name: "Zambujeira do Mar", coords: [37.5378, -8.8014], memory: "O pôr do sol em Zambujeira do Mar, momentos inesquecíveis 🌅" },
-            { name: "Aljezur", coords: [37.3135, -8.8063], memory: "A cidade encantadora de Aljezur, cheia de história 🏰" },
-            { name: "Odeceixe", coords: [37.3674, -8.7875], memory: "O encontro do Rio Odeceixe com o Oceano Atlântico 🌊" }
+            { name: "Sines", coords: [37.9563, -8.8708], memory: "Sines, cidade histórica e berço de Vasco da Gama 🏰" },
+            { name: "Praia da Ilha do Pessegueiro", coords: [37.8772, -8.7967], memory: "História e beleza natural em uma só praia 🌴" },
+            { name: "Praia da Samoqueira", coords: [37.8728, -8.7931], memory: "Paraíso escondido com águas calmas 🌊" },
+            { name: "Porto Covo", coords: [37.8545, -8.7924], memory: "Vila charmosa com águas cristalinas 🏖️" },
+            { name: "Vale Figueiros", coords: [37.9011, -8.8133], memory: "Tranquilidade no meio da natureza 🏞️" },
+            { name: "Farol de São Clemente", coords: [37.7285, -8.7883], memory: "Farol icônico com vistas de tirar o fôlego 🌟" },
+            { name: "Praia das Furnas (Odemira)", coords: [37.7167, -8.7767], memory: "Ótima para famílias e banhos relaxantes 🏝️" },
+            { name: "Praia Farol (Milfontes)", coords: [37.7225, -8.7800], memory: "Conexão entre natureza e história 🗺️" },
+            { name: "Almograve", coords: [37.6767, -8.7967], memory: "Dunas e paisagens fascinantes 🌾" },
+            { name: "Praia do Cavaleiro", coords: [37.5895, -8.7957], memory: "Paisagens impressionantes e trilhos incríveis 🏞️" },
+            { name: "Poça do Buraco", coords: [37.5738, -8.8128], memory: "Exploração e beleza natural únicas 🪨" },
+            { name: "Zambujeira do Mar", coords: [37.5231, -8.7866], memory: "Um dos melhores pores do sol da região 🌅" },
+            { name: "Praia dos Alteirinhos", coords: [37.5225, -8.7822], memory: "Famosa pela cascata e tranquilidade 🌊" },
+            { name: "Praia do Carvalhal", coords: [37.5221, -8.7900], memory: "Encantos naturais e trilhos relaxantes 🏖️" },
+            { name: "Praia dos Machados", coords: [37.4870, -8.7950], memory: "Beleza natural para os amantes da tranquilidade 🏝️" },
+            { name: "Praia da Amoreira", coords: [37.3692, -8.8121], memory: "Mistura perfeita de rio e mar 🌊" },
+            { name: "Vale dos Homens", coords: [37.3452, -8.8136], memory: "Perfeito para relaxar longe da multidão 🌅" },
+            { name: "Praia da Carreagem", coords: [37.3458, -8.8379], memory: "Rochas e paisagens impressionantes 🌿" }
         ],
+        
         route: [
-            [37.0206, -8.9876],
-            [37.1391, -8.8724],
-            [37.5378, -8.8014],
-            [37.3135, -8.8063],
-            [37.3674, -8.7875]
+            [37.9563, -8.8708],
+            [37.9011, -8.8133],
+            [37.8772, -8.7967],
+            [37.8728, -8.7931],
+            [37.8545, -8.7924],
+            [37.7285, -8.7883],
+            [37.7225, -8.7800],
+            [37.7167, -8.7767],
+            [37.6767, -8.7967],
+            [37.5895, -8.7957],
+            [37.5738, -8.8128],
+            [37.5231, -8.7866],
+            [37.5225, -8.7822],
+            [37.5221, -8.7900],
+            [37.4870, -8.7950],
+            [37.3692, -8.8121],
+            [37.3458, -8.8379],
+            [37.3452, -8.8136]
         ]
     },
     {
