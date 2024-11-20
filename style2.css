@@ -169,3 +169,13 @@ span:hover {
     cursor: pointer;
     
 }
+
+/* video mobile*/
+   /* Media query to resize the video for mobile devices */
+   @media screen and (max-width: 768px) {
+    video {
+        width: 75%;      /* Make video take full width of the container */
+        max-width: 75%;   /* Ensure the video doesn't overflow */
+        height: auto;      /* Maintain aspect ratio */
+    }
+}

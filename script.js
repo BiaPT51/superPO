@@ -174,53 +174,118 @@ function generateGallery(galleryId, count, folderName) {
 }
 
 //map.html
-// Initialize the map and set the view to Portugal's coordinates
-const map = L.map('map').setView([39.3999, -8.2245], 7); // Latitude and Longitude for Portugal, zoom level 7
+// Inicializa o mapa e define a visão para as coordenadas de Portugal
+const map = L.map('map').setView([39.3999, -8.2245], 6.5); // Latitude e Longitude de Portugal, nível de zoom 7
 
-// Add OpenStreetMap tiles (ensure HTTPS is used)
+// Adiciona as camadas do mapa (certifique-se de usar HTTPS)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
-    maxZoom: 18 // Maximum zoom level allowed
+    maxZoom: 18 // Nível máximo de zoom permitido
 }).addTo(map);
 
-// List of locations and associated memories for the Costa Vicentina route
-const locations = [
-    { name: "Cabo de São Vicente", coords: [37.0206, -8.9876], memory: "The stunning cliffs of Cabo de São Vicente 🏞️", url: "costa-vicentina.html" },
-    { name: "Carrapateira", coords: [37.1391, -8.8724], memory: "The beautiful beaches and surfing at Carrapateira 🌊🏄‍♂️", url: "carrapateira.html" },
-    { name: "Zambujeira do Mar", coords: [37.5378, -8.8014], memory: "Sunset at Zambujeira do Mar, unforgettable moments 🌅", url: "zambujeira.html" },
-    { name: "Aljezur", coords: [37.3135, -8.8063], memory: "Charming town of Aljezur, full of history 🏰", url: "aljezur.html" },
-    { name: "Odeceixe", coords: [37.3674, -8.7875], memory: "Odeceixe River meeting the Atlantic Ocean 🌊", url: "odeceixe.html" }
+// Lista de viagens e seus dados (coordenadas, memória, e URL)
+const trips = [
+    {
+        name: "Costa Vicentina '22",
+        description: "A primeira viagem que fizemos, Costa Vicentina '22",
+        color: 'blue', // Cor da polyline para esta viagem
+        url: "mes1.html", // URL associada a esta viagem
+        cities: [
+            { name: "Cabo de São Vicente", coords: [37.0206, -8.9876], memory: "As falésias deslumbrantes de Cabo de São Vicente 🏞️" },
+            { name: "Carrapateira", coords: [37.1391, -8.8724], memory: "As praias e o surf em Carrapateira 🌊🏄‍♂️" },
+            { name: "Zambujeira do Mar", coords: [37.5378, -8.8014], memory: "O pôr do sol em Zambujeira do Mar, momentos inesquecíveis 🌅" },
+            { name: "Aljezur", coords: [37.3135, -8.8063], memory: "A cidade encantadora de Aljezur, cheia de história 🏰" },
+            { name: "Odeceixe", coords: [37.3674, -8.7875], memory: "O encontro do Rio Odeceixe com o Oceano Atlântico 🌊" }
+        ],
+        route: [
+            [37.0206, -8.9876],
+            [37.1391, -8.8724],
+            [37.5378, -8.8014],
+            [37.3135, -8.8063],
+            [37.3674, -8.7875]
+        ]
+    },
+    {
+        name: "Viagem 2",
+        description: "Descrição da viagem 2",
+        color: 'green', // Cor da polyline para esta viagem
+        url: "viagem2.html", // URL associada a esta viagem
+        cities: [
+            { name: "Cidade 1", coords: [38.0, -7.0], memory: "Memória da cidade 1" },
+            { name: "Cidade 2", coords: [38.1, -7.1], memory: "Memória da cidade 2" }
+        ],
+        route: [
+            [38.0, -7.0],
+            [38.1, -7.1]
+        ]
+    },
+    {
+        name: "Viagem 3",
+        description: "Descrição da viagem 3",
+        color: 'red', // Cor da polyline para esta viagem
+        url: "viagem3.html", // URL associada a esta viagem
+        cities: [
+            { name: "Cidade 3", coords: [38.5, -7.5], memory: "Memória da cidade 3" },
+            { name: "Cidade 4", coords: [38.6, -7.6], memory: "Memória da cidade 4" }
+        ],
+        route: [
+            [38.5, -7.5],
+            [38.6, -7.6]
+        ]
+    },
+    // Adicionar mais viagens aqui conforme necessário
 ];
 
-// Function to add markers with popups to the map and redirect to specific pages
-locations.forEach(location => {
-    L.marker(location.coords) // Use the coordinates provided for each location
-        .addTo(map) // Add the marker to the map
-        .bindPopup(`<b>${location.name}</b><br>${location.memory}`) // Add a popup with the memory
-        .on('click', function () {
-            window.location.href = location.url; // Redirect to the URL of the trip or location
+// Função para abrir o modal com a descrição dinâmica
+function openModal(trip) {
+    // Atualiza o conteúdo do modal dinamicamente com base na viagem clicada
+    document.getElementById('modal-title').innerText = `Quer ver a ${trip.name}?`;
+    document.getElementById('modal-description').innerText = trip.description;
+
+    // Atualiza o título da página dinamicamente com o nome da viagem
+    document.title = `${trip.name} - Detalhes da Viagem`; // Atualiza o <title> da página
+
+    // Mostra o modal
+    document.getElementById('modal').style.display = 'flex';
+
+    // Quando o botão "Sim" for clicado, redireciona para a URL da viagem
+    document.getElementById('yes-btn').onclick = function () {
+        window.location.href = trip.url; // Usa a URL definida na viagem
+    };
+
+    // Quando o botão "Não" for clicado, fecha o modal
+    document.getElementById('no-btn').onclick = function () {
+        document.getElementById('modal').style.display = 'none'; // Fecha o modal
+    };
+}
+
+// Adiciona marcadores ao mapa para todas as cidades de todas as viagens
+trips.forEach(trip => {
+    // Adiciona os marcadores para as cidades da viagem
+    trip.cities.forEach(city => {
+        const marker = L.marker(city.coords).addTo(map);
+        marker.bindPopup(`<b>${city.name}</b><br>${city.memory}`);
+
+        // Quando o marcador da cidade é clicado, exibe o popup
+        marker.on('click', function () {
+            marker.openPopup();
         });
+    });
+
+    // Desenha a polyline para representar a rota da viagem com a cor definida na viagem
+    const route = L.polyline(trip.route, {
+        color: trip.color,  // Usa a cor personalizada para cada viagem
+        weight: 4,  // Espessura da linha
+        opacity: 0.7  // Transparência da linha
+    }).addTo(map);
+
+    // Quando a rota é clicada, abre o modal com a descrição da viagem
+    route.on('click', function () {
+        openModal(trip); // Passa a viagem para o modal
+    });
 });
 
-// Coordinates for the Costa Vicentina path (approximate locations of major points)
-const costaVicentinaCoordinates = [
-    [37.0206, -8.9876], // Cabo de São Vicente
-    [37.1391, -8.8724], // Carrapateira
-    [37.5378, -8.8014], // Zambujeira do Mar
-    [37.3135, -8.8063], // Aljezur
-    [37.3674, -8.7875]  // Odeceixe
-];
-
-// Draw a polyline to represent the Costa Vicentina route
-L.polyline(costaVicentinaCoordinates, {
-    color: 'blue',  // Set the color of the path
-    weight: 4,  // Thickness of the path
-    opacity: 0.7  // Transparency of the path
-}).addTo(map)
-  .on('click', function () {
-    window.location.href = 'mes1.html'; // Redirect to Costa Vicentina page when polyline is clicked
-  });
-
-
-
-
+// Fechar o modal quando o "X" for clicado
+document.getElementById('modal-close').onclick = function () {
+    document.getElementById('modal').style.display = 'none'; // Fecha o modal
+};
