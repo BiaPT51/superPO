@@ -173,5 +173,54 @@ function generateGallery(galleryId, count, folderName) {
     }
 }
 
+//map.html
+// Initialize the map and set the view to Portugal's coordinates
+const map = L.map('map').setView([39.3999, -8.2245], 7); // Latitude and Longitude for Portugal, zoom level 7
+
+// Add OpenStreetMap tiles (ensure HTTPS is used)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 18 // Maximum zoom level allowed
+}).addTo(map);
+
+// List of locations and associated memories for the Costa Vicentina route
+const locations = [
+    { name: "Cabo de São Vicente", coords: [37.0206, -8.9876], memory: "The stunning cliffs of Cabo de São Vicente 🏞️", url: "costa-vicentina.html" },
+    { name: "Carrapateira", coords: [37.1391, -8.8724], memory: "The beautiful beaches and surfing at Carrapateira 🌊🏄‍♂️", url: "carrapateira.html" },
+    { name: "Zambujeira do Mar", coords: [37.5378, -8.8014], memory: "Sunset at Zambujeira do Mar, unforgettable moments 🌅", url: "zambujeira.html" },
+    { name: "Aljezur", coords: [37.3135, -8.8063], memory: "Charming town of Aljezur, full of history 🏰", url: "aljezur.html" },
+    { name: "Odeceixe", coords: [37.3674, -8.7875], memory: "Odeceixe River meeting the Atlantic Ocean 🌊", url: "odeceixe.html" }
+];
+
+// Function to add markers with popups to the map and redirect to specific pages
+locations.forEach(location => {
+    L.marker(location.coords) // Use the coordinates provided for each location
+        .addTo(map) // Add the marker to the map
+        .bindPopup(`<b>${location.name}</b><br>${location.memory}`) // Add a popup with the memory
+        .on('click', function () {
+            window.location.href = location.url; // Redirect to the URL of the trip or location
+        });
+});
+
+// Coordinates for the Costa Vicentina path (approximate locations of major points)
+const costaVicentinaCoordinates = [
+    [37.0206, -8.9876], // Cabo de São Vicente
+    [37.1391, -8.8724], // Carrapateira
+    [37.5378, -8.8014], // Zambujeira do Mar
+    [37.3135, -8.8063], // Aljezur
+    [37.3674, -8.7875]  // Odeceixe
+];
+
+// Draw a polyline to represent the Costa Vicentina route
+L.polyline(costaVicentinaCoordinates, {
+    color: 'blue',  // Set the color of the path
+    weight: 4,  // Thickness of the path
+    opacity: 0.7  // Transparency of the path
+}).addTo(map)
+  .on('click', function () {
+    window.location.href = 'mes1.html'; // Redirect to Costa Vicentina page when polyline is clicked
+  });
+
+
 
 

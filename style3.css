@@ -1,0 +1,50 @@
+/* General styles for the map page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive Map Container */
+#map {
+    width: 100%;   /* Full width of the page */
+    height: 400px; /* Default height */
+    border-radius: 10px; /* Rounded corners for map */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Adjust the map container on larger screens */
+@media (min-width: 768px) {
+    #map {
+        height: 600px; /* Larger height on desktop/tablets */
+    }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem; /* Smaller font size on mobile */
+    }
+
+    #map {
+        height: 300px; /* Slightly smaller map on mobile */
+    }
+}
