@@ -19,7 +19,7 @@ function otherSecretNumber() {
     if(otherEnteredNumber === '') {
         window.location.replace('');
     } else{
-        alert('tenta outra vez');
+        alert('Tenta outra vez');
     }
 }
 
@@ -143,6 +143,7 @@ function generateGallery(galleryId, count, folderName) {
         // Construct the full S3 URLs for JPG and JPEG formats
         const jpgPath = `${baseUrl}${folderName}+(${i}).jpg`;
         const jpegPath = `${baseUrl}${folderName}+(${i}).jpeg`;
+        const jpgbigPath = `${baseUrl}${folderName}+(${i}).JPG`;
 
         const tempImg = new Image();
 
@@ -152,14 +153,18 @@ function generateGallery(galleryId, count, folderName) {
         };
 
         // Set the onerror handler to attempt to load the JPEG version if the JPG fails
-        tempImg.onerror = function() {
+        tempImg.onerror = function () {
             if (this.src === jpgPath) {
                 // Attempt to load the JPEG version only if JPG fails
                 tempImg.src = jpegPath;
+            } else if (this.src === jpegPath) {
+                // Attempt to load the JPGBIG version if JPEG also fails
+                tempImg.src = jpgbigPath;
             } else {
-                console.error(`Both JPG and JPEG versions failed to load for ${folderName} (${i})`);
+                console.error(`All JPG, JPEG, and JPGBIG versions failed to load for ${folderName} (${i})`);
             }
         };
+        
 
         // Initially try to load the JPG image
         tempImg.src = jpgPath;
