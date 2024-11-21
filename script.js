@@ -117,7 +117,7 @@ function setupImageHover(elementId, newImageRelativePath) {
 }
 
 // Example usage for multiple images
-setupImageHover('hoverImage1', 'costa1a.png');
+setupImageHover('hoverImage1', 'costa1_1.png');
 setupImageHover('hoverImage2', 'lousa1_1.png');
 setupImageHover('hoverImage3', 'marvao1_1.png');
 setupImageHover('hoverImage4', 'serrai1_1.png');
