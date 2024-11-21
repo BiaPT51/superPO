@@ -189,7 +189,7 @@ const trips = [
         name: "Costa Vicentina '23",
         description: "PDA!!",
         color: 'blue', // Cor da polyline para esta viagem
-        url: "mes1.html", // URL associada a esta viagem
+        url: "mes6.html", // URL associada a esta viagem
         cities: [
             { name: "Sines", coords: [37.9563, -8.8708], memory: "Sines, cidade histórica e berço de Vasco da Gama 🏰" },
             { name: "Praia da Ilha do Pessegueiro", coords: [37.8772, -8.7967], memory: "História e beleza natural em uma só praia 🌴" },
@@ -233,17 +233,21 @@ const trips = [
         ]
     },
     {
-        name: "Viagem 2",
-        description: "Descrição da viagem 2",
+        name: "Porto 24' ",
+        description: "Não sei o que escrever!",
         color: 'green', // Cor da polyline para esta viagem
-        url: "viagem2.html", // URL associada a esta viagem
+        url: "mes7.html", // URL associada a esta viagem
         cities: [
-            { name: "Cidade 1", coords: [38.0, -7.0], memory: "Memória da cidade 1" },
-            { name: "Cidade 2", coords: [38.1, -7.1], memory: "Memória da cidade 2" }
+            { name: "Aveiro", coords: [40.6405, -8.6538], memory: "Aveiro, conhecida como a 'Veneza de Portugal', com seus canais e barcos coloridos." },
+            { name: "Porto", coords: [41.1579, -8.6291], memory: "Porto, cidade do vinho do Porto e famosa pela sua arquitetura histórica e o Rio Douro." },
+            { name: "Matosinhos", coords: [41.1784, -8.6847], memory: "Matosinhos, famosa pelas suas praias e excelente gastronomia, especialmente os pratos de peixe e marisco." },
+            { name: "Zoo da Maia", coords: [41.2336, -8.6017], memory: "O Zoo da Maia, um dos maiores zoológicos de Portugal, é perfeito para quem gosta de aprender sobre a vida selvagem e a preservação das espécies." }
         ],
         route: [
-            [38.0, -7.0],
-            [38.1, -7.1]
+            [40.6405, -8.6538],
+            [41.1579, -8.6291],
+            [41.1784, -8.6847],
+            [41.2336, -8.6017]
         ]
     },
     {
