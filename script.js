@@ -251,7 +251,7 @@ const trips = [
         ]
     },
     {
-        name: "Viagem 3",
+        name: "Serra da Estrela 23 verão",
         description: "Descrição da viagem 3",
         color: 'red', // Cor da polyline para esta viagem
         url: "viagem3.html", // URL associada a esta viagem
